@@ -126,12 +126,12 @@ int main(int argc, char *argv[]) {
     num_processes = strtol(argv[4], NULL, 10);
     
 
-    for(int i=0;i<size;i++){
-        for(int j=0;j<size;j++){
-            printf("%f ",A[i][j]);
-        }   
-        printf("\n");
-    }
+    // for(int i=0;i<size;i++){
+    //     for(int j=0;j<size;j++){
+    //         printf("%f ",A[i][j]);
+    //     }   
+    //     printf("\n");
+    // }
 
     // if(num_processes>size){
     //     num_processes=size;
@@ -139,11 +139,7 @@ int main(int argc, char *argv[]) {
     
     X = (double *)malloc(size * sizeof(double));
    
-    // for(int i=0;i<size;i++){
-    //     X[i]=0;
-    //     printf("after ini: X[%f]=%f\n",i,X[i]);
-    // }
-
+//real final
     pthread_barrier_init(&barrier, NULL, num_processes); 
     pthread_t threads[num_processes];
     int thread_ids[num_processes];
@@ -178,7 +174,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-
+//hello
 //gcc -g -o hw3 hw3.c -pthread
 //gdb hw3
 //run A2.dat B2.dat X2.dat 3

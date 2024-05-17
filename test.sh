@@ -117,6 +117,7 @@ function nxn_test(){
 
 function thread_n_test(){
     ./${fn} A1024.dat B1024.dat X1024.dat $1 &
+    pidorg = $!
     sleep 0.01
     output=$(ps aux | grep "./${fn}" | wc -l)
     if [ ${output} -gt $1 ] ; then
@@ -134,6 +135,7 @@ function thread_n_test(){
 	exit 1
     fi
 
+    wait $pidorg
     outputd=$(./hwdiff X1024.dat X1024a.dat ${diff_max})
     if [ $? -eq 0 ] ; then
 	echo "Step 3 passes: (1024*1024) Output is correct"
