@@ -1,0 +1,1 @@
+Error: no. elements(100) of A10.dat is not square of that(2) of B2.dat.
