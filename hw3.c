@@ -133,9 +133,9 @@ int main(int argc, char *argv[]) {
         printf("\n");
     }
 
-    if(num_processes>size){
-        num_processes=size;
-    }
+    // if(num_processes>size){
+    //     num_processes=size;
+    // }
     
     X = (double *)malloc(size * sizeof(double));
    
